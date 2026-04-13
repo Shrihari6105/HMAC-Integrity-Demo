@@ -59,8 +59,8 @@ HMAC-Verification/
 
 | Endpoint | Integrity Check | Behaviour |
 |---|---|---|
-| `POST /transfer` | ✅ HMAC-SHA256 | Rejects tampered requests with 403 |
-| `POST /transfer-no-hmac` | ❌ None | Accepts any value blindly — intentionally vulnerable |
+| `POST /transfer` | HMAC-SHA256 | Rejects tampered requests with 403 |
+| `POST /transfer-no-hmac` | None | Accepts any value blindly — intentionally vulnerable |
 
 ---
 
