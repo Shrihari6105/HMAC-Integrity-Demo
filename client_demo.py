@@ -24,7 +24,7 @@ def print_separator(title: str):
 
 
 # Demo 1
-def demo_legitimate_request():
+def legit_request():
     print_separator("DEMO 1: Legitimate Request")
 
     transfer = "5000"
@@ -45,7 +45,7 @@ def demo_legitimate_request():
 
 
 # Demo 2
-def demo_tampered_request():
+def tampered_request():
     print_separator("DEMO 2: Tampered Request (HMAC unchanged)")
 
     # Original values used to generate HMAC
@@ -71,7 +71,7 @@ def demo_tampered_request():
 
 
 # Demo 3 
-def demo_no_hmac_endpoint():
+def no_hmac():
     print_separator("DEMO 3: Tampered Request — Insecure Endpoint (No HMAC check)")
 
     tampered_transfer = "9000"
@@ -116,9 +116,9 @@ if __name__ == "__main__":
 
     print("\n\n─── Server-dependent demos (ensure server.py is running) ───")
     try:
-        demo_legitimate_request()
-        demo_tampered_request()
-        demo_no_hmac_endpoint()
+        legit_request()
+        tampered_request()
+        no_hmac()
     except requests.exceptions.ConnectionError:
         print("\n Could not connect to server.")
         print("  Start the server first: python server.py")
